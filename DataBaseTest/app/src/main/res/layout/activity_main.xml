@@ -18,4 +18,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="add data" />
+
+    <Button
+        android:id="@+id/updateData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="update data" />
+
+    <Button
+        android:id="@+id/deleteData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="delete data" />
+
+    <Button
+        android:id="@+id/queryData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="query data" />
 </LinearLayout>

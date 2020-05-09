@@ -8,9 +8,21 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/takePhotoBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take Photo" />
+
+    <Button
+        android:id="@+id/fromAlbumBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从相册中选" />
+
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/sendNotice"
-        android:text="send notice"/>
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

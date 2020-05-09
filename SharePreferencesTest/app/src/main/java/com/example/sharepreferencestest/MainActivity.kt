@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.core.content.edit
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -13,14 +14,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         saveButton.setOnClickListener {
 
-            val editor = getSharedPreferences("data", Context.MODE_PRIVATE).edit().apply() {
+            /*val editor = getSharedPreferences("data", Context.MODE_PRIVATE).edit().apply() {
                 putString("name", "Tom")
                 putInt("age", 27)
                 putBoolean("married", false)
                 apply()
+            }*/
+            getSharedPreferences("data",Context.MODE_PRIVATE).edit {
+                putString("name", "Tom")
+                putInt("age", 27)
+                putBoolean("married", false)
             }
-
+            /*getSharedPreferences("data", Context.MODE_PRIVATE).open {
+                putString("name", "Tom")
+                putInt("age", 27)
+                putBoolean("married", false)
+            }*/
         }
+
         restoreButton.setOnClickListener {
             val prefs = getSharedPreferences("data", Context.MODE_PRIVATE)
             val name = prefs.getString("name", "")

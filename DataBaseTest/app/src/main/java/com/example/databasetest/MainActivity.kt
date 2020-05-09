@@ -4,6 +4,7 @@ import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.core.content.contentValuesOf
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 import java.lang.NullPointerException
@@ -19,13 +20,19 @@ class MainActivity : AppCompatActivity() {
         }
         addData.setOnClickListener {
             val db = databaseHelper.writableDatabase
-            val values = ContentValues().apply {
-                //组装第一条数据
-                put("name", "The Da Vinci Code")
-                put("author", "Dan Brown")
-                put("pages", 454)
-                put("price", 16.96)
-            }
+            /* val values = ContentValues().apply {
+                 //组装第一条数据
+                 put("name", "The Da Vinci Code")
+                 put("author", "Dan Brown")
+                 put("pages", 454)
+                 put("price", 16.96)
+             }*/
+            val values = contentValuesOf(
+                "name" to "The Da Vinci Code",
+                "author" to "Dan Brown",
+                "pages" to 454,
+                "price" to 16.96
+            )
             db.insert("Book", null, values)
             val values2 = ContentValues().apply {
                 //组装第二条数据
